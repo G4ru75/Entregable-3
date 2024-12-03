@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 1</title>
+</head>
+<body>
+    <script>
+        let PrimerNumero, SegundoNumero, Resultado; 
+        let Opcion = 0; 
+        while(Opcion != 5){
+            Resultado = 0; 
+            PrimerNumero = parseFloat(prompt("Digite su primer numero: ")); 
+            SegundoNumero = parseFloat(prompt("Digite su segundo numero: "));
+            
+            alert("Digite 1 para sumar\n Digite 2 para restar\n Digite 3 para multiplicar\n Digite 4 para dividir\n Digite 5 para salir"); 
+
+            Opcion = parseInt(prompt("Digite su opcion: "));
+
+            switch(Opcion){
+                case 1: 
+                            Resultado = Sumar(PrimerNumero, SegundoNumero);
+                            alert(`El resultado de la suma: ${Resultado}`);
+                            break;  
+
+                case 2: 
+                            Resultado = Restar(PrimerNumero, SegundoNumero);
+                            alert(`El resultado de la resta: ${Resultado}`);
+                            break; 
+
+                case 3: 
+                            Resultado = Multiplicacion(PrimerNumero, SegundoNumero);
+                            alert(`El resultado de la multiplicacion: ${Resultado}`); 
+                            break;
+
+                case 4: 
+                            Resultado = Division(PrimerNumero, SegundoNumero);
+                            alert(`El resultado de la division: ${Resultado}`);
+                            break;   
+
+                case 5: break;   
+            }
+        }
+       
+        //FUNCIONES
+        function Sumar(PrimerNumeroRecibido, SegundoNumeroRecibido){
+            return PrimerNumeroRecibido + SegundoNumeroRecibido;
+        }
+
+        function Restar(PrimerNumeroRecibido, SegundoNumeroRecibido){
+            return PrimerNumeroRecibido - SegundoNumeroRecibido;
+        }
+
+        function Multiplicacion(PrimerNumeroRecibido, SegundoNumeroRecibido){
+            return PrimerNumeroRecibido * SegundoNumeroRecibido;
+        }
+
+        function Division(PrimerNumeroRecibido, SegundoNumeroRecibido){
+            if (SegundoNumeroRecibido === 0){
+                alert("Numeros invalidos"); 
+                return 0; 
+            }
+            return PrimerNumeroRecibido / SegundoNumeroRecibido;
+        }
+
+    </script>
+</body>
+</html>

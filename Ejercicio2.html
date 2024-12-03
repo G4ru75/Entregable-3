@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2</title>
+</head>
+<body>
+    <Script>
+         let PrimerNumero, SegundoNumero; 
+         let Opcion = 0; 
+            while(Opcion !== 'Salir'){
+                PrimerNumero = parseFloat(prompt("Digite su primer numero: ")); 
+                SegundoNumero = parseFloat(prompt("Digite su segundo numero: "));
+            
+                alert("Digite + para sumar\n Digite - para restar\n Digite * para multiplicar\n Digite / para dividir\n Digite Salir para salir")
+
+                Opcion = prompt("Digite su opcion: ");
+                
+                if (Opcion !== 'Salir') 
+                { 
+                    Calculadora(PrimerNumero, SegundoNumero, Opcion);
+                 } else
+                 { 
+                    alert("Fin del programa.");                    
+                 }
+                Calculadora(PrimerNumero, SegundoNumero, Opcion);
+
+            }
+            
+            //Funciones
+        function Calculadora(PrimerNumeroRecibido, SegundoNumeroRecibido, Opcion)
+        {
+            let Resultado = 0; 
+            switch(Opcion){
+                case "+": 
+                            Resultado = Sumar(PrimerNumeroRecibido, SegundoNumeroRecibido);
+                            alert(`El resultado de la suma: ${Resultado}`);
+                            break;  
+
+                case '-': 
+                            Resultado = Restar(PrimerNumeroRecibido, SegundoNumeroRecibido);
+                            alert(`El resultado de la resta: ${Resultado}`);
+                            break; 
+
+                case '*': 
+                            Resultado = Multiplicacion(PrimerNumeroRecibido, SegundoNumeroRecibido);
+                            alert(`El resultado de la multiplicacion: ${Resultado}`); 
+                            break;
+
+                case '/': 
+                            Resultado = Division(PrimerNumeroRecibido, SegundoNumeroRecibido);
+                            alert(`El resultado de la division: ${Resultado}`);
+                            break; 
+
+                case 'Salir': break;
+            }
+        }
+                 
+        function Sumar(PrimerNumeroRecibido, SegundoNumeroRecibido){
+            return PrimerNumeroRecibido + SegundoNumeroRecibido;
+        }
+
+        function Restar(PrimerNumeroRecibido, SegundoNumeroRecibido){
+            return PrimerNumeroRecibido - SegundoNumeroRecibido;
+        }
+
+        function Multiplicacion(PrimerNumeroRecibido, SegundoNumeroRecibido){
+            return PrimerNumeroRecibido * SegundoNumeroRecibido;
+        }
+
+        function Division(PrimerNumeroRecibido, SegundoNumeroRecibido){
+            if (SegundoNumeroRecibido === 0){
+                alert("Numeros invalidos"); 
+                return 0; 
+            }
+            return PrimerNumeroRecibido / SegundoNumeroRecibido;
+        }
+    </Script>
+</body>
+</html>
